@@ -3,6 +3,7 @@ FROM php:7.4-cli-alpine
 RUN apk add --no-cache zip git curl npm mysql-client
 
 RUN apk add --no-cache icu-dev freetype-dev libjpeg-turbo-dev libpng-dev \
+    && docker-php-ext-install gmp \
     && docker-php-ext-install intl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
