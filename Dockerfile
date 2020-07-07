@@ -1,6 +1,6 @@
 FROM php:7.4-cli-alpine
 
-RUN apk add --no-cache zip git curl npm mysql-client python3
+RUN apk add --no-cache zip git curl npm mysql-client python3 make g++
 
 RUN apk add --no-cache gmp-dev icu-dev freetype-dev libjpeg-turbo-dev libpng-dev \
     && docker-php-ext-install gmp \
