@@ -1,0 +1,8 @@
+version: '2.2'
+
+services:
+  testing:
+    image: azuracast/azuracast_testing:latest
+    build:
+      context: .
+    command: php -v
