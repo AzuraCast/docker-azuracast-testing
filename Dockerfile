@@ -1,6 +1,6 @@
-FROM php:7.4-cli-alpine
+FROM php:8.0-cli-alpine
 
-RUN apk add --no-cache zip git curl npm mysql-client python3 make g++
+RUN apk add --no-cache zip git curl npm mysql-client python3 make g++ bash
 
 RUN apk add --no-cache gmp-dev icu-dev freetype-dev libjpeg-turbo-dev libpng-dev \
     && docker-php-ext-install gmp \
@@ -11,8 +11,8 @@ RUN apk add --no-cache gmp-dev icu-dev freetype-dev libjpeg-turbo-dev libpng-dev
     && docker-php-ext-install pdo_mysql
 
 RUN apk add --no-cache --virtual .build-deps autoconf build-base \
-    && pecl install redis-5.1.1 \
-    && pecl install xdebug-2.8.1 \
+    && pecl install redis-5.3.4 \
+    && pecl install xdebug-3.0.4 \
     && docker-php-ext-enable redis xdebug \
     && apk del .build-deps
 
