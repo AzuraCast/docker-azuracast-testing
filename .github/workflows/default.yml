@@ -7,8 +7,6 @@ on :
       - main
     tags :
       - '*'
-  schedule :
-    - cron : '0 2 * * 0' # Weekly on Sundays at 02:00
 
 jobs :
   docker:
